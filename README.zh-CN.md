@@ -67,6 +67,53 @@ ShanHai（海珊）无需私有 SeaFlow 基座即可独立使用。
 
 LuoHai（海珞）无需私有 SeaFlow 基座即可独立使用。
 
+### 🔭 预告中的 Skills（预留 / 规划中）
+
+以下四个 Skill 目前处于**预留 / 规划中**状态。它们的仓库是各自正式的（canonical）未来实现仓库，现阶段刻意保持"文档优先、代码极少"：初始提交用于在实现开始之前，先固定 Skill 契约、架构边界与计划中的公开接口。目前不对它们主张任何可运行功能。
+
+它们共同描述了证据在被获取之后如何被组织：**WenHai（海玟）** 把文件登记为可长期使用的文献资产，**XianHai（海现）** 把证据与事件放回时间之中，**JueHai（海珏）** 用带类型的关系与溯源路径把它们连接起来，**ChenHai（海琛）** 判断由此形成的证据是否足够，并在不足时请求补取。
+
+#### 🕰️ [XianHai（海现）](https://github.com/HuDeyi-66/Xian_Hai_Time_Skill) — 时序证据编排 Skill
+
+**XianHai（海现）** 负责把证据放回时间之中。
+
+- 证据与事件的时间排序；事件时间线
+- 证据状态迁移；时间有效期与陈旧性感知
+- 缺失时段与时间断层检测；由断层驱动的复核 / 补取请求
+
+它不创造证据，不作出法律结论，也不取代来源检索。时间线与时序编排属于海现；一般性的证据关系与溯源路径属于海珏。
+
+#### 🔎 [ChenHai（海琛）](https://github.com/HuDeyi-66/Chen_Hai_Explore_Skill) — 证据探查与评估 Skill
+
+**ChenHai（海琛）** 负责判断：我们现在知道得够不够。
+
+- 证据覆盖度评估；不充分性检测
+- 检索风险 / 召回风险信号
+- 存在 qrels 时的基准精确率 / 召回率评估；否则使用运行时覆盖度代理指标
+- 识别尚未解决的证据缺口，并给出重试 / 补取建议
+
+它不自行检索证据，不编造缺失证据，也不静默填补缺口。海琛负责检测不充分并请求补取；编排由海现决定；实际检索由检索类 Skill 完成。
+
+#### 🗂️ [WenHai（海玟）](https://github.com/HuDeyi-66/Wen_Hai_Files_Skill) — 文献资产 Skill
+
+**WenHai（海玟）** 负责让文件成为可追踪、可长期使用的证据资产。
+
+- 文献资产登记；长期稳定的文件标识
+- 来源元数据保全；载体追踪；文件溯源
+- 为下游 Skill 提供稳定的文献引用
+
+目标材料包括演讲稿、政策文件、报告、公开声明、会议纪要，以及机构与企业文件。它不是通用文件管理器，不是云盘替代品，也不是时序推理器。
+
+#### 🕸️ [JueHai（海珏）](https://github.com/HuDeyi-66/Jue_Hai_Graph_Skill) — 证据图谱 / 溯源图谱 Skill
+
+**JueHai（海珏）** 负责回答：证据、来源、事件与主张之间究竟如何相连。
+
+- 证据、主张、来源与事件的带类型节点
+- `supports`、`contradicts`、`derived_from`、`contained_in`、`references`、`corroborates`、`qualifies` 等带类型关系
+- 溯源路径构建与可审计的图谱遍历
+
+它不取代通用知识图谱平台，不拥有时序编排，也不推断缺乏依据的边，不把相关性静默转化为证据支持。
+
 ## 🧭 我如何理解这些项目
 
 我的很多研究和开发都可以放到这样一条链条中：
@@ -86,6 +133,10 @@ LuoHai（海珞）无需私有 SeaFlow 基座即可独立使用。
 - 📘 [ShanHai（海珊）](https://github.com/HuDeyi-66/Shan_Hai_Code_Skill) —— 面向文本资料的证据导向检索 Skill。
 - 📊 [LuoHai（海珞）](https://github.com/HuDeyi-66/Luo_Hai_Tables_Skill) —— 面向结构化与表格资料的证据处理 Skill。
 - 🧭 [SeaFlow Project Control](https://github.com/HuDeyi-66/seaflow-library-project-control) —— SeaFlow 开发过程的公开项目控制与审查站点。
+- 🕰️ [XianHai（海现）](https://github.com/HuDeyi-66/Xian_Hai_Time_Skill) —— *预留 / 规划中* —— 时序证据编排：证据状态、时间线与时间断层。
+- 🔎 [ChenHai（海琛）](https://github.com/HuDeyi-66/Chen_Hai_Explore_Skill) —— *预留 / 规划中* —— 证据覆盖度、不充分性检测与补取建议。
+- 🗂️ [WenHai（海玟）](https://github.com/HuDeyi-66/Wen_Hai_Files_Skill) —— *预留 / 规划中* —— 长期文献资产登记与文件溯源。
+- 🕸️ [JueHai（海珏）](https://github.com/HuDeyi-66/Jue_Hai_Graph_Skill) —— *预留 / 规划中* —— 带类型节点与关系的溯源感知证据图谱。
 
 ## 📖 研究 × 工程
 
